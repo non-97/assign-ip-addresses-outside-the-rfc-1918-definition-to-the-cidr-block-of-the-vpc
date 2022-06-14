@@ -92,7 +92,7 @@ export class VpcStack extends Stack {
     );
 
     // Route to VPC Peering connection
-    vpcA.isolatedSubnets.map((iSubnet: ec2.ISubnet, index: number) => {
+    vpcA.publicSubnets.map((iSubnet: ec2.ISubnet, index: number) => {
       new ec2.CfnRoute(
         this,
         `Route to VPC Peering connection of public subnet in VPC A ${index}`,
@@ -103,7 +103,7 @@ export class VpcStack extends Stack {
         }
       );
     });
-    vpcB.isolatedSubnets.map((iSubnet: ec2.ISubnet, index: number) => {
+    vpcB.publicSubnets.map((iSubnet: ec2.ISubnet, index: number) => {
       new ec2.CfnRoute(
         this,
         `Route to VPC Peering connection of public subnet in VPC B ${index}`,
