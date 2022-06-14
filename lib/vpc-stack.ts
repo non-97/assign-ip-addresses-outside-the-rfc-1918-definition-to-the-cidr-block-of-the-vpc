@@ -46,7 +46,7 @@ export class VpcStack extends Stack {
       cidr: "198.51.100.0/24",
       enableDnsHostnames: true,
       enableDnsSupport: true,
-      natGateways: 1,
+      natGateways: 0,
       maxAzs: 1,
       subnetConfiguration: [
         { name: "Public", subnetType: ec2.SubnetType.PUBLIC, cidrMask: 28 },
